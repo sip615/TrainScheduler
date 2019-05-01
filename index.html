@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <!-- jQuery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+  <!-- Firebase Reference -->
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+
+  <!-- Moment.js Reference -->
+  <script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
+<!-- Train Time -->
+  <div class="container">
+    <!-- Jumbotron -->
+    <div class="jumbotron" style="background-color: rgb(19, 101, 136); color: white">
+      <h1 class="text-center">Train Scheduler</h1>
+      <h3 class="text-center">Which Train? What Train? When Train?</h3>
+    </div>
+    <div class="row">
+      <div class="col-lg-12">
+        <!-- Train Schedule -->
+        <div class="card">
+          <div class="card-header">
+            Current Train Schedule
+          </div>
+          <div class="card-body">
+            <table class="table table-hover" id='train-table'>
+              <thead>
+                <tr>
+                  <th>Train Name</th>
+                  <th>Destination</th>
+                  <th>Frequency (min)</th>
+                  <th>Next Arrival</th>
+                  <th>Minutes Away</th>
+                </tr>
+              </thead>
+              <tbody>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Add Train  -->
+        <div class="card mt-2">
+          <div class="card-header">
+            Add Train
+          </div>
+          <div class="card-body">
+            <!-- Entry Form -->
+            <form>
+              <div class="form-group">
+                <label for="train-name-input">Train Name</label>
+                <input type="text" class="form-control" id="train-name-input">
+              </div>
+              <div class="form-group">
+                <label for="destination-input">Destination</label>
+                <input type="text" class="form-control" id="destination-input">
+              </div>
+              <div class="form-group">
+                <label for="first-train-input">First Train Time (HH:mm - military time)</label>
+                <input type="text" class="form-control" id="first-train-input">
+              </div>
+              <div class="form-group">
+                <label for="frequency-input">Frequency (min)</label>
+                <input type="text" class="form-control" id="frequency-input">
+              </div>
+              <button type="submit" class="btn btn-primary" id="add-train-btn">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Script Tags-->
+
+  <!-- Firebase -->
+
+<script src="https://www.gstatic.com/firebasejs/5.11.0/firebase.js"></script>
+  <script>
+    // Initialize Firebase
+    var config = {
+      apiKey: "AIzaSyDUwtOV4Tw7RWYn3vGu9yJtI-kFa57mU68",
+      authDomain: "trainscheduler-32f44.firebaseapp.com",
+      databaseURL: "https://trainscheduler-32f44.firebaseio.com",
+      projectId: "trainscheduler-32f44",
+      storageBucket: "trainscheduler-32f44.appspot.com",
+      messagingSenderId: "556028589919"
+    };
+    firebase.initializeApp(config);
+  </script>
+
+<!-- JS Script -->  
+  <script src="./assets/js/main.js"></script>
+
+</head>
+<body>
+    
+</body>
+</html>
