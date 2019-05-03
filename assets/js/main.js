@@ -1,14 +1,19 @@
 // Initialize Firebase
-    var config = {
-        apiKey: "AIzaSyDUwtOV4Tw7RWYn3vGu9yJtI-kFa57mU68",
-        authDomain: "trainscheduler-32f44.firebaseapp.com",
-        databaseURL: "https://trainscheduler-32f44.firebaseio.com",
-        projectId: "trainscheduler-32f44",
-        storageBucket: "trainscheduler-32f44.appspot.com",
-        messagingSenderId: "556028589919"
-    };
-    firebase.initializeApp(config);
+const firebaseConfig = {
+    apiKey: "AIzaSyDUwtOV4Tw7RWYn3vGu9yJtI-kFa57mU68",
+    authDomain: "trainscheduler-32f44.firebaseapp.com",
+    databaseURL: "https://trainscheduler-32f44.firebaseio.com",
+    projectId: "trainscheduler-32f44",
+    storageBucket: "trainscheduler-32f44.appspot.com",
+    messagingSenderId: "556028589919",
+    appId: "1:556028589919:web:455af2a9e91bb475"
+  };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+
+
     var trainInfo = firebase.database();
+
 
 //Event handler which runs on the click of the train button.
     $("#add-train-btn").on("click", function(event){
@@ -18,6 +23,7 @@
         var firstTrain = $("#first-train-input").val().trim();
         var frequency = $("#frequency-input").val().trim();
     
+
 //object to hold the train information.
         var newTrain = {
             name: trainName,
@@ -25,6 +31,8 @@
             firstTrain: firstTrain,
             frequency: frequency
         };
+
+        
 //Call a push method (with a newTrain argument) on the ref method on the trainInfo object which is the firebase database that we've linked above... To push the new train objects to firebase.
         trainInfo.ref().push(newTrain);
 
